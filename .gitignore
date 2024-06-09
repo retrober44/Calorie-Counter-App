@@ -1,2 +1,94 @@
-
+# Ignore .DS_Store files
 .DS_Store
+
+# Ignore node_modules
+frontend/node_modules/
+npm-debug.log
+
+# Ignore build outputs
+frontend/build/
+frontend/dist/
+
+# Ignore .env files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Ignore log files
+frontend/logs
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Ignore coverage
+frontend/coverage/
+
+# Ignore .net core packages
+backend/bin/
+backend/obj/
+backend/*.user
+backend/*.rsuser
+backend/*.suo
+backend/*.userosscache
+backend/*.userprefs
+
+# Ignore Visual Studio specific files
+backend/.vs/
+backend/.vscode/
+
+# Ignore Rider specific files
+backend/.idea/
+backend/*.sln.iml
+
+# Ignore any OS generated files
+**/.DS_Store
+**/Thumbs.db
+
+# Ignore by build systems
+frontend/.next/
+frontend/.nuxt/
+frontend/.out/
+frontend/out/
+
+# Ignore lock files
+frontend/package-lock.json
+frontend/yarn.lock
+
+# Ignore generated files
+frontend/.eslintcache
+frontend/.parcel-cache
+frontend/.stylelintcache
+frontend/.tsbuildinfo
+frontend/.rpt2_cache/
+frontend/.cache-loader/
+
+# Ignore production build
+frontend/build/
+frontend/dist/
+frontend/out/
+
+# Ignore temporary files
+frontend/tmp/
+frontend/temp/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore .env files
+.env
+.env.test
+.env.production
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
