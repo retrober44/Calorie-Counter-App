@@ -1,4 +1,4 @@
-# kalorienzaehler
+# Calorie Counter App
 
 This application is a calorie counter that allows users to input their personal data and calculate their daily calorie consumption. The app consists of a backend in C# .NET Core and a frontend in React.
 
@@ -7,10 +7,6 @@ This application is a calorie counter that allows users to input their personal 
 - [Technologies](#technologies)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Starting the Backend](#starting-the-backend)
-- [Starting the Frontend](#starting-the-frontend)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
 
 ## Features
 - Users can input personal data such as height, weight, birth date, and gender.
