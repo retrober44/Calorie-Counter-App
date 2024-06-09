@@ -1,0 +1,15 @@
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/bin/Debug/net7.0/kalorienzähler
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/bin/Debug/net7.0/kalorienzähler.deps.json
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/bin/Debug/net7.0/kalorienzähler.runtimeconfig.json
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/bin/Debug/net7.0/kalorienzähler.dll
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/bin/Debug/net7.0/kalorienzähler.pdb
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.csproj.AssemblyReference.cache
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.AssemblyInfoInputs.cache
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.AssemblyInfo.cs
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.csproj.CoreCompileInputs.cache
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.dll
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/refint/kalorienzähler.dll
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.pdb
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/kalorienzähler.genruntimeconfig.cache
+/Users/fyxy/Documents/dev/c#/kalorienzähler/kalorienzähler/obj/Debug/net7.0/ref/kalorienzähler.dll

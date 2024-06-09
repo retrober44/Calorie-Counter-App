@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{09A80380-EB87-4577-90FB-8A78D586B0C1}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.api-kalorienzähler PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="api-kalorienzähler/Controllers/UserDataController.cs">
+    <Files>
+      <File FileName="api-kalorienzähler/Program.cs" Line="13" Column="34" />
+      <File FileName="api-kalorienzähler/Properties/launchSettings.json" />
+      <File FileName="api-kalorienzähler/appsettings.json" />
+      <File FileName="api-kalorienzähler/Controllers/UserDataController.cs" Line="14" Column="6" />
+      <File FileName="api-kalorienzähler/Models/UserData.cs" Line="5" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="api-kalorienzähler" expanded="True">
+            <Node name="api-kalorienzähler" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UserDataController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
