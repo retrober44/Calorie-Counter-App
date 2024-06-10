@@ -23,7 +23,7 @@ namespace ApiKalorienzaehler.Controllers
         [HttpPost]
         public IActionResult SaveUserData([FromBody] UserData userData)
         {
-            _logger.LogInformation("Received user data: {@UserData}", userData);
+            _logger.LogInformation("Benutzerdaten empfangen: {@UserData}", userData);
 
             try
             {
@@ -71,58 +71,72 @@ namespace ApiKalorienzaehler.Controllers
                 }
 
                 System.IO.File.WriteAllLines(filePath, lines);
-                _logger.LogInformation("User data saved successfully.");
+                _logger.LogInformation("Benutzerdaten erfolgreich gespeichert.");
 
-                return Ok(new { message = "User data saved successfully." });
+                return Ok(new { message = "Benutzerdaten erfolgreich gespeichert." });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error saving user data.");
-                return StatusCode(500, new { message = "There was an error saving the user data." });
+                _logger.LogError(ex, "Fehler beim Speichern der Benutzerdaten.");
+                return StatusCode(500, new { message = "Es gab einen Fehler beim Speichern der Benutzerdaten." });
             }
         }
 
-
         [HttpGet("{username}")]
-public IActionResult GetUserData(string username)
-{
-    try
-    {
-        var directoryPath = Path.Combine("UserData");
-        var filePath = Path.Combine(directoryPath, $"{username}-gewichtsdaten.csv");
-
-        if (!System.IO.File.Exists(filePath))
+        public IActionResult GetUserData(string username)
         {
-            return NotFound(new { message = "User data not found." });
+            try
+            {
+                var directoryPath = Path.Combine("UserData");
+                var filePath = Path.Combine(directoryPath, $"{username}-gewichtsdaten.csv");
+
+                if (!System.IO.File.Exists(filePath))
+                {
+                    _logger.LogWarning($"Benutzerdaten für {username} nicht gefunden.");
+                    return NotFound(new { message = "Benutzerdaten nicht gefunden." });
+                }
+
+                var lines = System.IO.File.ReadAllLines(filePath);
+                if (lines.Length < 2)
+                {
+                    _logger.LogWarning($"Keine Benutzereinträge für {username} gefunden.");
+                    return NotFound(new { message = "Keine Benutzereinträge gefunden." });
+                }
+
+                var lastEntry = lines.Last();
+                var data = lastEntry.Split(',');
+
+                // Log the raw data for debugging
+                _logger.LogInformation($"Gelesene Daten für {username}: {string.Join(", ", data)}");
+
+                if (data.Length < 9)
+                {
+                    _logger.LogError("Die CSV-Datei hat nicht die erwartete Anzahl von Spalten.");
+                    return StatusCode(500, new { message = "Die CSV-Datei hat nicht die erwartete Anzahl von Spalten." });
+                }
+
+                var userData = new UserData
+                {
+                    Username = username,
+                    BirthDate = DateTime.ParseExact(data[1], "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"),
+                    Height = int.Parse(data[2], CultureInfo.InvariantCulture),
+                    Weight = double.Parse(data[3], CultureInfo.InvariantCulture),
+                    Gender = data[4],
+                    PalWert = double.Parse(data[6], CultureInfo.InvariantCulture)
+                };
+
+                return Ok(userData);
+            }
+            catch (FormatException fe)
+            {
+                _logger.LogError(fe, "Fehler beim Formatieren der Daten.");
+                return StatusCode(500, new { message = "Fehler beim Formatieren der Daten." });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Fehler beim Abrufen der Benutzerdaten.");
+                return StatusCode(500, new { message = "Es gab einen Fehler beim Abrufen der Benutzerdaten." });
+            }
         }
-
-        var lines = System.IO.File.ReadAllLines(filePath);
-        if (lines.Length < 2)
-        {
-            return NotFound(new { message = "No user data entries found." });
-        }
-
-        var lastEntry = lines.Last();
-        var data = lastEntry.Split(',');
-
-        var userData = new UserData
-        {
-            Username = username,
-            BirthDate = DateTime.ParseExact(data[1], "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"),
-            Weight = double.Parse(data[3], CultureInfo.InvariantCulture),
-            Height = int.Parse(data[4], CultureInfo.InvariantCulture),
-            Gender = data[5],
-            PalWert = double.Parse(data[6], CultureInfo.InvariantCulture)
-        };
-
-        return Ok(userData);
-    }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, "Error retrieving user data.");
-        return StatusCode(500, new { message = "There was an error retrieving the user data." });
-    }
-}
-
     }
 }
